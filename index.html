@@ -7,7 +7,7 @@
   <style>
     /**
 * 1. Centers the content.
-* 2. Feel free to change this, this sets the width
+* 2. This sets the width
 * 3. Adds some internal 'padding' to the div
 */
 .wrapper {
@@ -23,19 +23,170 @@ padding-left: 10px; /* 3 */
 hr{
   max-width:500px;
 }
+.myButton {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
   </style>
 </head>
+
+
 <body>
   
 <div class="wrapper">
  <h1 class="center">Rock Paper Scissors</h1>
 
-Yoru Turn
+
 <br><br>
-<button onclick=" throw()">Throw</button>
+
+  
   <script>
+
+    const rockASCII ="\n\
+                _______     \n\
+            ---'   ____\)   \n\
+                \(_____\)   \n\
+                \(_____\)   \n\
+                \(____\)    \n\
+          ---.__\(___\)    \n\
+          \n\
+          \n";
+
+    const paperASCII = "\n\
+                 _______\n\
+            ---'    ____\)____  \n\
+                       ______\) \n\
+                      _______\) \n\
+                     _______\)  \n\
+            ---.__________\)    \n\
+          \n\
+          \n"; 
+
+   const scissorsASCII = "\n\
+                _______          \n\
+            ---'   ____\)____    \n\
+                      ______\)   \n\
+                   __________\)  \n\
+                  \(____\)       \n\
+            ---.__\(___\)        \n\
+          \n\
+          \n"; 
+
+    const hrASCII = "\n\******************************* \n";
+
+
+    
+let winner = null;
+let playerSelection = 'rock';
+let computerSelection = computerPlay();
+
+console.log(game())
+
+function game() {
+    var i = 1;
+    var roundResult = "";
+    while (i<6){
+        roundResult += hrASCII + " Round " + i + hrASCII + playRound(playerSelection, computerSelection);
+        i++;
+    };
+return roundResult;
+}
+
+function playRound(playerSelection, computerSelection) {
+	
+    switch (playerSelection){
+    
+    case "rock": 
+
+        switch(computerSelection){
+        case "Rock":
+            var playerStatus = "\n\n You Played" + rockASCII + "The Computer Played" + rockASCII + "You tie! You both threw a rock.\n\n" ;
+            break;
+        case "Paper":
+        var playerStatus = "\n\n You Played" + rockASCII + "The Computer Played" + paperASCII +  "You Lose! Paper covers rock. \n\n";
+            break;
+        case "Scissors":
+        var playerStatus = "\n\n You Played" + rockASCII + "The Computer Played" + scissorsASCII +  "You Win! Rock crushes Scissors. \n\n";
+            break;
+        }
+    break;
+
+    case "paper": 
+
+        switch(computerSelection){
+        case "Rock":
+            var playerStatus = "Win";
+            break;
+        case "Paper":
+            var playerStatus = "Tie";
+            break;
+        case "Scissors":
+            var playerStatus = "Lose";
+            break;
+        }
+    break;
+
+    case "scissors": 
+
+        switch(computerSelection){
+        case "Rock":
+            var playerStatus = "Lose";
+            break;
+        case "Paper":
+            var playerStatus = "Win";
+            break;
+        case "Scissors":
+            var playerStatus = "Tie";
+            break;
+        }
+    break;
+    
+    }
+return playerStatus;
+    }
+ 
+
+   function computerPlay(){
+        
+        computerPlayed = Math.floor((Math.random() * 3) + 1);
+        
+        switch(computerPlayed){
+            case 1:
+                computerPlayed = "Rock";              
+                break;
+            case 2:
+                computerPlayed = "Paper";
+                break;
+            case 3:
+                computerPlayed = "Scissors";
+                break;
+        }
+
+        return computerPlayed;   
+   };
    
   
+
   </script>
 </body>
 </html>
