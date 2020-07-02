@@ -1,5 +1,5 @@
 # Rock Paper Scissors (RPS)
-A simple javascript game played in the javascript console of the users browser. To play, you must have the javascript consol open in the browser.
+A simple javascript game played in the javascript console of the users browser. To play, you must have the javascript console open in the browser.
 
 
 ## Rules 
