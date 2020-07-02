@@ -18,7 +18,7 @@ h2 {
     font-size: 2em;
 }
 .gameSplash {
-  background-image: url(/assets/wallpaper.svg);
+  background-image: url(assets/wallpaper.svg);
   width: 100%;
   min-height: 400px;
 }
