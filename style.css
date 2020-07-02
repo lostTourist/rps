@@ -7,21 +7,27 @@
 
 
   h1 {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     text-shadow: 4px 4px 4px #aaa;
     font-size: 4em;
     font-weight : 700;
 }
 h2 {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
     font-weight : 200;
     font-size: 2em;
 }
-
-
+.gameSplash {
+  background-image: url(/assets/wallpaper.svg);
+  width: 100%;
+  min-height: 400px;
+}
 .footer img {
     width: 1em;
     padding-right: 3px;
 }
 .footer a{
+  font-family: 'Yanone Kaffeesatz', sans-serif;
     text-decoration:none;
     color: azure;
     font-weight : 200;
