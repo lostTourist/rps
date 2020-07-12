@@ -45,11 +45,7 @@
     margin-bottom: 2em;
    
   }
-  .footer{
-    margin: auto;  /* Magic! */
-    width:100%;
-    margin-bottom: 0px;
-  }
+
   h1 {
     
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -64,7 +60,6 @@ h2 {
     font-size: 2em;
 }
 .footer{
- 
   background-color: rgb(51, 45, 42);
 }
 .footer img {
@@ -84,6 +79,7 @@ body {
   width: 100%;
  padding: 0; /* reset */
  padding-bottom: calc(100% * 3 / 4);
+ background-repeat: no-repeat;
  
   }
 
